@@ -1,0 +1,5 @@
+16:06:2025	19:02:08	15ded049-5948-48b1-b22a-8c29ff9a5a15	Testing logging after logs folder deletion
+16:06:2025	19:18:21	2ee693eb-8350-4e7a-8fbb-bf17d2603a53	Testing logging after logs folder deletion
+16:06:2025	19:18:23	9add96ed-daec-45c3-aa20-3c6e806512a0	Log Event emitted
+16:06:2025	19:20:17	475cc4df-78a2-4094-88de-9e83b50b1886	Testing logging after logs folder deletion
+16:06:2025	19:20:19	08e6335e-b7d0-462e-92ad-a495d3050f24	Log Event emitted

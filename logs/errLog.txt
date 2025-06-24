@@ -1,0 +1,55 @@
+21:06:2025	23:40:51	8a93b5c0-daa3-498d-aeb4-46699195de6c	Error: Cannot set headers after they are sent to the client
+21:06:2025	23:41:22	29880639-48bf-40b3-a375-56528384c286	Error: Cannot set headers after they are sent to the client
+21:06:2025	23:41:51	5b9e7e5b-8879-4148-a20c-d4af39fd6cc9	Error: Cannot set headers after they are sent to the client
+21:06:2025	23:43:46	d89506c9-eb62-4cf3-96a9-b6469f00a03c	Error: Cannot set headers after they are sent to the client
+22:06:2025	09:03:44	ee7e6dc4-a4d7-4af1-a0fb-30bd3ad316f2	TypeError: Cannot destructure property 'username' of 'req.body' as it is undefined.
+24:06:2025	11:44:36	866cb7f8-36e1-4756-8c34-a586c75acc71	TypeError: Cannot destructure property 'username' of 'req.body' as it is undefined.
+24:06:2025	12:06:25	dfb31d33-92ea-4bf0-a04e-75ff8d705189	TypeError: userDB.users.find is not a function
+24:06:2025	12:08:03	ab8a880e-aa3a-4b25-9953-31e7babd7f84	TypeError: userDB.users.find is not a function
+24:06:2025	12:09:43	94a6c98d-e563-4d7e-b35a-b274a5a3e65a	SyntaxError: Expected property name or '}' in JSON at position 5 (line 2 column 3)
+24:06:2025	12:10:04	3ddae881-781e-44bc-8a69-a1e058de670a	SyntaxError: Unexpected token 'p', "
+  password: "... is not valid JSON
+24:06:2025	12:11:18	f7e15e93-159e-49f7-80b0-9d7bc0c1ae4e	TypeError: userDB.users.find is not a function
+24:06:2025	12:11:46	d277af38-f698-4455-9a73-07c3e3f8ac6b	TypeError: userDB.users.find is not a function
+24:06:2025	12:52:39	1a3837af-b754-4f1f-a223-645ec6e93d05	TypeError: userDB.users.find is not a function
+24:06:2025	12:52:47	71d6b868-8f87-426a-b3f5-7fbf2f7eaf66	TypeError: userDB.users.find is not a function
+24:06:2025	12:53:24	d1586224-de17-4967-a3fa-62fb41882705	TypeError: userDB.users.find is not a function
+24:06:2025	12:55:38	fae8fc0b-f8c2-43ab-8050-f144e56b281b	TypeError: userDB.users.find is not a function
+24:06:2025	13:00:18	42f7a846-23ad-43b9-ae5c-9e92f58f087a	SyntaxError: Expected ',' or '}' after property value in JSON at position 25 (line 2 column 23)
+24:06:2025	13:07:57	b6a705c7-6d18-4ac9-8ab0-af97ff3310d0	TypeError: Cannot destructure property 'username' of 'req.body' as it is undefined.
+24:06:2025	13:37:02	7d5dab50-9701-46d1-8bf5-70cc2954181a	Error: Cannot set headers after they are sent to the client
+24:06:2025	13:37:46	06a02bfe-5fbf-49e5-bd2f-e6da2de28baa	Error: Cannot set headers after they are sent to the client
+24:06:2025	13:38:13	4081df33-2f51-4ba6-8722-41ba296f37b0	Error: Cannot set headers after they are sent to the client
+24:06:2025	13:38:26	33d19258-3639-4698-84f6-6e25770cb87e	Error: Cannot set headers after they are sent to the client
+24:06:2025	13:40:08	48fed92d-531e-4bfd-b796-2a7f1bb90efc	Error: Cannot set headers after they are sent to the client
+24:06:2025	13:40:25	bc20e269-3c7b-42cf-abd7-acd986748f0c	Error: Cannot set headers after they are sent to the client
+24:06:2025	13:40:35	200aeaea-2088-4666-8293-d915b3bcd2a2	Error: Cannot set headers after they are sent to the client
+24:06:2025	14:20:51	efdd1b7b-7f3b-49e1-8e33-c396deef95dc	TypeError: Cannot read properties of undefined (reading 'firstname')
+24:06:2025	14:22:18	c6179472-cc75-46db-aab4-4e596c759ab7	TypeError: Cannot read properties of undefined (reading 'firstname')
+24:06:2025	14:24:04	23a66aa0-10ba-4f98-92a4-1277c5a6fa2d	TypeError: Cannot read properties of undefined (reading 'firstname')
+24:06:2025	14:25:32	3eb40a09-6b95-419b-a146-d34b7bfda54b	TypeError: Cannot read properties of undefined (reading 'firstname')
+24:06:2025	15:32:50	5a8e66c3-338e-48d6-bddf-4e314664d352	Error: Not allowed by CORS
+24:06:2025	15:32:52	4951c6e5-f017-4f2f-8cc9-440d7577bd8d	Error: Not allowed by CORS
+24:06:2025	15:39:02	2fc96196-efca-48d4-8e96-660641672099	Error: Not allowed by CORS
+24:06:2025	15:39:17	1563113c-b5ef-4d04-888d-8a6c1b93710f	Error: Not allowed by CORS
+24:06:2025	15:39:25	f36112c3-237d-412a-8a29-fe2249dbf45e	Error: Not allowed by CORS
+24:06:2025	15:41:58	574591f4-6806-4f64-b77d-412956f57d0f	Error: Not allowed by CORS
+24:06:2025	15:42:01	0c3ac14a-3776-4e3c-938b-52f1e49d2cf4	Error: Not allowed by CORS
+24:06:2025	15:42:09	592f85fb-9452-450b-bc43-5c6e71a9464d	Error: Not allowed by CORS
+24:06:2025	15:42:15	a766f179-df64-4ae2-88ce-e5ad5e405a7e	Error: Not allowed by CORS
+24:06:2025	15:45:54	9059e473-c119-4a0a-9506-bfc9e344d47d	Error: Not allowed by CORS
+24:06:2025	15:46:02	cd576a8e-88c1-463f-840a-5de3be622719	Error: Not allowed by CORS
+24:06:2025	15:48:12	5f058608-569d-4cbb-a416-71607df7eaa9	Error: Not allowed by CORS
+24:06:2025	15:49:28	ddd88466-5ef5-4e17-bef9-3c356944c42d	Error: Not allowed by CORS
+24:06:2025	15:49:28	4c00a789-9d35-4d34-b775-3cbdb2ed044f	Error: Not allowed by CORS
+24:06:2025	15:49:29	e165677b-0403-4a46-b7da-cc8cb7dfaa60	Error: Not allowed by CORS
+24:06:2025	15:49:29	4ba47a5c-b8dd-40c7-9bf9-3d520b2dcc6d	Error: Not allowed by CORS
+24:06:2025	15:49:30	c88044f1-2759-40d6-9c0c-8406ffe0fbdc	Error: Not allowed by CORS
+24:06:2025	15:49:30	3c3598e8-c81f-439d-bc8c-1c2e20832d2e	Error: Not allowed by CORS
+24:06:2025	15:49:30	3e30f931-9d56-4683-9d0c-b6a80fed34e9	Error: Not allowed by CORS
+24:06:2025	15:49:30	8a83e69f-b267-4bea-ba97-6f0d22a9fc9b	Error: Not allowed by CORS
+24:06:2025	15:49:30	bb6f51ee-8adf-4bc2-8216-43d913baa270	Error: Not allowed by CORS
+24:06:2025	15:49:31	a8a89448-e9a2-453e-a589-5700abc111d3	Error: Not allowed by CORS
+24:06:2025	15:49:31	bdeee402-dbe3-4d4b-b6a4-042bc7e1036b	Error: Not allowed by CORS
+24:06:2025	15:49:31	ce935720-a15a-4786-86b3-0f329f43c6e1	Error: Not allowed by CORS
+24:06:2025	15:49:31	a626b29b-d250-41e6-9c92-f432557edb5d	Error: Not allowed by CORS

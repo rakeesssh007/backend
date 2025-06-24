@@ -1,0 +1,423 @@
+node js or comment js
+
+javascript for backend
+1. node runs on server not in browser. 
+
+console.log("hello world") -- output in console only--browser console
+2. console of node is in terminal window not in browser window
+
+if we want to start server, in ternimal type --> node server.js --> server.js is file name 
+
+3. we have global object instead of window object
+means global access for entire backend document.  for clear vision type console.log(global) in server.js file and run node server.js
+
+4. has common core modules. -->
+module system ..???
+
+5. common js modules are used instead of es modules
+
+type of modules
+1. common core
+2.costum /user
+3. third party
+
+npm package manager --> node package manager
+
+just type npm i to install all the dependencies
+
+
+
+ install uuid, we get node_modules , package.json , package-lock.json. 
+
+  //uuid
+  in package.json we find..>
+  ^11.1.0 --> 0 is patch version , 1 is minor version , 11 is major version,
+             ^ means -- nom update when i say, it will update all patch minor and major,  to protect the major verion to be updated. 
+             ~ only updates in patch version
+             * just pic up the latest version for all majot=r, minor , patch
+
+
+//file system common core module :
+it hepls to write new element in file, read from an existing file
+
+
+// common core modules --> are inbild
+// 1. os module
+//const os=require('os') 
+//os . type -returns type of OS
+//console.log(os.type())
+//os.versoin -returns version of OS
+//console.log(os.version())
+//os.homedir -returns homedir of os
+//console.log(os.homedir())
+//path
+//console.log(__dirname)
+//path with file name
+//console.log(__filename)
+
+
+//2. path module
+//const path=require('path')
+//console.log(path.basename(__filename))
+//console.log(path.extname(__filename))
+//console.log(path.dirname(__filename))
+//console.log(path.parse(__filename)) // give the all details about the file as a single javascript object
+
+//custom module system.
+//const math=require('./math')
+//console.log(math.add(2,3))
+
+//destructuring
+//const{div}=require('./math')
+//console.log(div(5,2))
+
+//3.third party module system. 
+//const { v4: uuid } = require('uuid'); // Correct syntax
+//const uniqueId = uuid();
+//console.log(uniqueId);
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+//file system common core module
+const fs = require('fs')
+//read content*********
+//fs.readFile('./textfiles/demo.txt' ,'utf8' ,(err,data)=>{
+ //   if(err)
+ //       throw err
+  //  console.log(data)   //can keep data.tostring insted of utf8 in parameters
+//}) //takes 2 params, 1st is path where the file is located , 2 is what to do with that logic
+
+//above run, we will have output as buffer values. coz we have to tell node in ehich format it has to convert. 
+
+
+const path =require('path')
+fs.readFile(path.join(__dirname, 'textfiles' , 'demo.txt'), 'utf8' ,(err,data)=>{
+    if(err)
+        console.log(err.message)
+    console.log('readfile completed')
+    console.log(data)
+       
+}
+)
+
+
+//error message
+process.on('uncaughtException', err=>   //on keyword for any backend event. 
+    console.log(err.message)
+)
+
+
+
+/***write file  */ // it creates file if it doesnt exist, if the file exist it overrides the content
+
+fs.writeFile(path.join(__dirname, 'textfiles','hello.txt') ,'this is hello.txt file created from write file' , (err)=>{
+    if(err)
+        console.log(err.message)
+    console.log('writefile completed')
+})  //2 params, 1 is file path , 2nd is content or logic , 
+
+//if we dont want override, just add some content aftertext
+// can be donr using append file method
+
+fs.appendFile(path.join(__dirname, 'textfiles','hello.txt') ,'trying to update' , (err)=>{
+    if(err)
+        console.log(err.message)
+    console.log('append file  completed')
+}) 
+
+
+//read the content in demo.txt and write in hello.txt file and append some more information in hello.txt
+
+fs.readFile(path.join(__dirname, 'textfiles' , 'demo.txt'), 'utf8' ,(err,data)=>{
+    if(err)
+        console.log(err.message)
+    console.log('readfile completed')
+    console.log(data)
+
+    
+fs.writeFile(path.join(__dirname, 'textfiles','hi.txt') ,'this is hi.txt file created from write file' , (err)=>{
+    if(err)
+        console.log(err.message)
+    console.log('writefile completed')
+
+    
+fs.appendFile(path.join(__dirname, 'textfiles','hi.txt') ,'trying to update the hi file helloooo' , (err)=>{
+    if(err)
+        console.log(err.message)
+    console.log('append file  completed')
+}) 
+})
+
+
+
+       
+}
+)
+
+
+
+
+
+
+
+
+//promises version of fs //dont need 3rd paramater --call back function
+//call back hell
+//promises
+
+// Using fs promises to avoid callback hell
+const fs = require('fs').promises;
+const path = require('path');
+
+const fileOps = async () => {
+  try {
+    // Read file content
+    const data = await fs.readFile(path.join(__dirname, 'textfiles', 'demo.txt'), 'utf8');
+    console.log("Read completed:\n" + data);
+
+    // Write to another file
+    await fs.writeFile(path.join(__dirname, 'textfiles', 'hello.txt'), data);
+    console.log("Write completed to hello.txt");
+
+    // Append to a different file
+    await fs.appendFile(path.join(__dirname, 'textfiles', 'hello.txt'), '\n\nChetana Siva Durga');
+    console.log("Append completed to hello.txt");
+
+    //Rename the hello.txt file name to hi.txt file name
+    await fs.rename(path.join(__dirname, 'textfiles', 'hello.txt') ,path.join(__dirname, 'textfiles', 'hi.txt') )
+    console.log("Renamed the file")
+    
+    //delete the file demo.txt
+    await fs.unlink(path.join(__dirname, 'textfiles', 'demo.txt'))
+    console.log("deleted demo.txt")
+
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+};
+
+fileOps();
+
+
+/***********streems***////
+const fs = require('fs');
+const path = require('path');
+
+//using streams to move text  from one file to another file
+const rs=fs.createReadStream(path.join(__dirname, 'textfiles', 'demo.txt') ,{encoding:'utf-8'})
+const ws =fs.createWriteStream(path.join(__dirname, 'textfiles', 'new_demo.txt'))
+
+
+
+
+const fileOps = async () => {
+   // rs.on('data' , (datachunk)=>
+     //   ws.write(datachunk)
+    //)
+
+    rs.pipe(ws)
+
+};
+
+fileOps();
+
+
+
+/*****//
+// to create folder using mkdir , sync  , promises. 
+const fs = require('fs').promises;
+const path = require('path');
+const fsSync=require('fs')
+
+const fileOps =async()=>{
+    //await fs.writeFile(path.join(__dirname, "NewFolder" ,"newtext.txt") , "content in file") // folders cant be created, only files canbe
+
+    //how to create the folder and chek if the given folder exists or not . 
+    //existsink method is used for that
+    if(!fsSync.existsSync(path.join(__dirname, "NewFolder" ,"newtext.txt")))
+        await fs.mkdir(path.join(__dirname, "NewFolder")) //mkdir --for adding new files. 
+    await fs.writeFile(path.join(__dirname, "NewFolder" ,"newtext.txt") , "content in file , another addup") // folders cant be created, only files canbe
+
+};
+
+fileOps();
+
+
+// to create folder using mkdir , sync  , promises. 
+const fs = require('fs');
+const path = require('path');
+
+
+//delete the folder
+fs.rmdir(path.join(__dirname ,"NewFolder"), (err)=>{
+    if(err)
+        console.log(err.message)
+})
+
+
+/******************/
+how to work with npm modules -- globally and for our local server
+for npm to install globally is, in termianal type npm i nodemon -g 
+it do change and save in server , that file or server will again start from scratch
+nodemon -- will restart from the start and give output from start with updates. 
+
+use nodemon server.js once in terminal , so no need to write every time node server.js
+
+yo stop nodemon we have to click ctrl +c
+
+2 types of dependencies
+1. dev dependency -- useful only suring development face of project , not in execution
+  eg: nodemon -- developer dependency  - for this use npm i nodemon -d on terminal for backend project 
+   -- we get this in package.json
+  "dependencies": {
+    "nodemon": "^3.1.10"
+  }
+
+2. 
+
+
+to remove the dependency we use  npm rm nodemon in terminal . this will remove th e nodemon. 
+
+
+to work with date formats, we get npm i date-fns
+
+next add uuid also, for working with unique inbild
+node modules will increse more and more we get to install all the dependencies
+
+
+type npm i it will install every thing related to npm . 
+create a file gitignore and type node_modules, inside it , so that when we are pushing our project to gitub , it will not take node_modules
+node_modules in unnesary folder to push into github
+
+
+in scripts add :  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node server.js",
+    "server":"nodemon server.js"
+  },
+
+  so that every time node server.js cant be typed in terminal. just type node start
+  for nodemon just type npm run server
+
+
+understand package.json  very well, because it it going to be backbone of our project
+
+/**usage of datefns module*/
+const date = require('date-fns')
+console.log(date.format(new Date(),"yyyy:MM:dd\tHH:mm:ss"))
+// we will get current date and time 
+
+
+//***server.js
+
+const logEvents = require('./logEvents');
+
+logEvents('Testing logging after logs folder deletion');
+
+console.log('Server.js ran successfully');
+
+const EventEmitter =require('events')
+// events --> common core module, EventEmitter will be in the events common core module
+
+class MyEmitter extends EventEmitter{}
+
+
+const emitter = new MyEmitter();
+
+// on is the listener in files. 
+// log is event name , all other parameters will be the parameters of call back function 
+emitter.on('log',(message)=>{
+  logEvents(message)
+})
+
+setTimeout(()=>
+{
+  emitter.emit('log','Log Event emitted', 'sucessful')
+},2000)
+
+
+/**logevents.js**/
+const { format } = require('date-fns');
+const { v4: uuid } = require('uuid');
+const path = require('path');
+const fs = require('fs');
+const fsPromises = fs.promises;
+
+const logEvents = async (message) => {
+  const dateTime = format(new Date(), "dd:MM:yyyy\tHH:mm:ss");
+  const logItem = `${dateTime}\t${uuid()}\t${message}\n`;
+
+  try {
+    const logDir = path.join(__dirname, 'logs');
+
+    // Create folder only if it doesn't exist
+    if (!fs.existsSync(logDir)) {
+      await fsPromises.mkdir(logDir);
+    }
+
+    // Append log item to eventLog.txt
+    await fsPromises.appendFile(path.join(logDir, 'eventLog.txt'), logItem);
+  } catch (error) {
+    console.log('Logging Error:', error.message);
+  }
+};
+
+module.exports = logEvents;
+
+
+/****creating https server ****/
+
+/** HTTP server building from client side to request and response */
+
+const http = require('http');
+const path = require('path');
+const fs = require('fs');
+const fsPromises = fs.promises;
+
+const logEvents = require('./logEvents'); // Make sure this exists
+const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter {}
+const emitter = new MyEmitter();
+
+const PORT = process.env.PORT || 3500;
+
+// Create HTTP server
+const server = http.createServer((req, res) => {
+  console.log(req.url, req.method);
+
+  let filePath;
+  switch(req.url){
+    case '/':
+
+  if (req.url === '/' || req.url === '/index.html') {
+    res.statusCode = 200; // 200 means OK
+    res.setHeader('Content-Type', 'text/html');
+
+    //status code, content type, file path
+
+    filePath = path.join(__dirname, 'views', 'index.html');  
+
+    fs.readFile(filePath, 'utf-8', (err, data) => {
+      if (err) {
+        console.log(err);
+        res.statusCode = 500;
+        res.end('Server Error');
+      } else {
+        res.end(data);
+      }
+    });
+  } else {
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('404 - Page Not Found');
+  }
+
+}
+});
+
+// Start listening on the defined port
+server.listen(PORT, () => {
+  console.log(`Server running on port http://localhost:${PORT}`);
+});
+
+
